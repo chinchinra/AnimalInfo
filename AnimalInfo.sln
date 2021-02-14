@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalInfo", "AnimalInfo\AnimalInfo.csproj", "{717BC577-8929-40E3-94D1-B517A090A349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mainform", "Mainform\Mainform.csproj", "{F6778F4F-DF35-4F95-A5E5-B19304B39DBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{717BC577-8929-40E3-94D1-B517A090A349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717BC577-8929-40E3-94D1-B517A090A349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717BC577-8929-40E3-94D1-B517A090A349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717BC577-8929-40E3-94D1-B517A090A349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6778F4F-DF35-4F95-A5E5-B19304B39DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6778F4F-DF35-4F95-A5E5-B19304B39DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6778F4F-DF35-4F95-A5E5-B19304B39DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6778F4F-DF35-4F95-A5E5-B19304B39DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C716BC26-39AA-4725-8F06-FA13A887F788}
+	EndGlobalSection
+EndGlobal
