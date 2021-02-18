@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,15 +42,15 @@ namespace Mainform
             searchForm.Owner = this;
             searchForm.ShowDialog();
 
-            name = searchForm.Name;
-            animalName = searchForm.AnimalName;
-            phoneNumber = searchForm.PhoneNumber;
+            //x로 빠져나갔을떄
+            if (searchForm.Name != "")
+            {
+                name = searchForm.Name;
+                animalName = searchForm.AnimalName;
+                phoneNumber = searchForm.PhoneNumber;
+            }
 
-            //ListViewItem listViewItem = new ListViewItem(new String[] { name, animalName, phoneNumber });
-            //listView1.Items.Add(listViewItem);
-
-            textBox1.Text = name+" , "+animalName+" , "+phoneNumber;
-
+            label1.Text = name + " , " + animalName + " , " + phoneNumber;
             searchForm.Dispose();
         }
 
@@ -139,6 +140,60 @@ namespace Mainform
 
         private void 예약ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String strConn = "Server=localhost;Database=bbscontents;Uid=kang;Pwd=123456;";
+
+            int count = listView1.Items.Count;
+
+            if( name != null | count > 0)
+            {
+                if (MessageBox.Show("purchase ? ", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //정보 삽입을 위해 데이터 베이스 접속 후 삽입
+                    using (MySqlConnection conn = new MySqlConnection(strConn))
+                    {
+                        conn.Open();
+
+                        try
+                        {
+
+                            for (int i = 0; i < count; i++)
+                            {
+                                String ii = listView1.Items[i].SubItems[1].Text.Replace(",", "");
+                                int k = Convert.ToInt32(listView1.Items[i].SubItems[1].Text.Replace(",", ""));
+                                String sqlComand = String.Format(" insert into purchasehis(name,phonenumber,product,productprice,datetime)  " +
+                                    "                               values( '{0}' , '{1}' , '{2}', {3} , '{4}' )", name, phoneNumber,
+                                                                    listView1.Items[i].SubItems[0].Text, k, DateTime.Now.ToString("yyyy-MM-dd"));
+                                MySqlCommand cmd = new MySqlCommand(sqlComand, conn);
+                                cmd.ExecuteNonQuery();
+
+                            }
+                            MessageBox.Show("purchase");
+
+                            listView1.Clear();
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("error");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("아니요 클릭");
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("null");
+            }
+
 
         }
     }

@@ -60,12 +60,13 @@ namespace Mainform
                 
             }
             //대화상자 종료
+            MessageBox.Show("생성 완료");
             this.Close();
         }
 
         private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("생성 완료");
+            
         }
     }
 }

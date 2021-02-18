@@ -126,6 +126,7 @@ namespace Mainform
             this.Controls.Add(this.listView1);
             this.Name = "SearchForm";
             this.Text = "2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchForm_FormClosing);
             this.Load += new System.EventHandler(this.SearchForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

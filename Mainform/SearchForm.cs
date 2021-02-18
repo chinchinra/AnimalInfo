@@ -169,5 +169,15 @@ namespace Mainform
                 button1_Click(sender, e);
             }
         }
+
+        private void SearchForm_FormClosing(object sender, FormClosingEventArgs e)
+        {           
+            if (name.Equals("SearchForm"))
+            {
+                name = "";
+                animalName = "";
+                phoneNumber = "";
+            }
+        }
     }
 }

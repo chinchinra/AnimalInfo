@@ -34,14 +34,15 @@ namespace Mainform
             this.menu2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.상품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.서비스ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.예약ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.예약ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,7 +68,7 @@ namespace Mainform
             this.예약ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1013, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1013, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,16 +99,23 @@ namespace Mainform
             this.서비스ToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.서비스ToolStripMenuItem.Text = "서비스";
             // 
+            // 예약ToolStripMenuItem
+            // 
+            this.예약ToolStripMenuItem.Name = "예약ToolStripMenuItem";
+            this.예약ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.예약ToolStripMenuItem.Text = "예약";
+            this.예약ToolStripMenuItem.Click += new System.EventHandler(this.예약ToolStripMenuItem_Click);
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1013, 448);
+            this.splitContainer1.Size = new System.Drawing.Size(1013, 450);
             this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -119,25 +127,36 @@ namespace Mainform
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Panel1.Controls.Add(this.button1);
-            this.splitContainer2.Panel1.Controls.Add(this.textBox1);
             this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(672, 448);
+            this.splitContainer2.Size = new System.Drawing.Size(672, 450);
             this.splitContainer2.SplitterDistance = 224;
             this.splitContainer2.TabIndex = 0;
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(224, 25);
-            this.textBox1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 15);
+            this.label1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(73, 360);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "삭제";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // splitContainer3
             // 
@@ -153,7 +172,7 @@ namespace Mainform
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.listView1);
-            this.splitContainer3.Size = new System.Drawing.Size(444, 448);
+            this.splitContainer3.Size = new System.Drawing.Size(444, 450);
             this.splitContainer3.SplitterDistance = 147;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -178,27 +197,20 @@ namespace Mainform
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(444, 297);
+            this.listView1.Size = new System.Drawing.Size(444, 299);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(73, 360);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "삭제";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // 예약ToolStripMenuItem
-            // 
-            this.예약ToolStripMenuItem.Name = "예약ToolStripMenuItem";
-            this.예약ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.예약ToolStripMenuItem.Text = "예약";
-            this.예약ToolStripMenuItem.Click += new System.EventHandler(this.예약ToolStripMenuItem_Click);
+            this.button2.Location = new System.Drawing.Point(73, 403);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "수납";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -240,10 +252,11 @@ namespace Mainform
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem 예약ToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
